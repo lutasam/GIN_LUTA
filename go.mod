@@ -1,4 +1,4 @@
-module lutasam/GIN_LUTA
+module github.com/lutasam/GIN_LUTA
 
 go 1.17
 

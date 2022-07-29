@@ -2,9 +2,9 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"lutasam/GIN_LUTA/biz/bo"
-	"lutasam/GIN_LUTA/biz/service"
-	"lutasam/GIN_LUTA/biz/utils"
+	"github.com/lutasam/GIN_LUTA/biz/bo"
+	"github.com/lutasam/GIN_LUTA/biz/service"
+	"github.com/lutasam/GIN_LUTA/biz/utils"
 )
 
 type DemoController struct{}

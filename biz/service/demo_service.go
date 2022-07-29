@@ -3,9 +3,9 @@ package service
 import (
 	"errors"
 	"github.com/gin-gonic/gin"
-	"lutasam/GIN_LUTA/biz/bo"
-	"lutasam/GIN_LUTA/biz/common"
-	"lutasam/GIN_LUTA/biz/dal"
+	"github.com/lutasam/GIN_LUTA/biz/bo"
+	"github.com/lutasam/GIN_LUTA/biz/common"
+	"github.com/lutasam/GIN_LUTA/biz/dal"
 	"sync"
 )
 
