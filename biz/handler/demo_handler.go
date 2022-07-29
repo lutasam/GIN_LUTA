@@ -9,12 +9,11 @@ import (
 
 type DemoController struct{}
 
-func RegisterDemoRouter(r *gin.Engine) {
+func RegisterDemoRouter(r *gin.RouterGroup) {
 	demoController := &DemoController{}
-	Demo := r.Group("/demo")
 	{
-		Demo.GET("/ping", demoController.Ping)
-		Demo.POST("/hello", demoController.Hello)
+		r.GET("/ping", demoController.Ping)
+		r.POST("/hello", demoController.Hello)
 	}
 }
 
