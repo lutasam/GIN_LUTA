@@ -1,7 +1,6 @@
 package service
 
 import (
-	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/lutasam/GIN_LUTA/biz/bo"
 	"github.com/lutasam/GIN_LUTA/biz/common"
@@ -35,7 +34,7 @@ func (ins *DemoService) Ping(c *gin.Context) (*bo.PingResponse, error) {
 
 func (ins *DemoService) Hello(c *gin.Context, req *bo.HelloRequest) (*bo.HelloResponse, error) {
 	if req.Username == "" {
-		return nil, errors.New(common.USERINPUTERRORMSG)
+		return nil, common.USERINPUTERROR
 	}
 	hello, err := dal.GetDemoDal().Hello(c)
 	if err != nil {
