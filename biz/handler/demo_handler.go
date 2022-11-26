@@ -3,6 +3,7 @@ package handler
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/lutasam/GIN_LUTA/biz/bo"
+	"github.com/lutasam/GIN_LUTA/biz/common"
 	"github.com/lutasam/GIN_LUTA/biz/service"
 	"github.com/lutasam/GIN_LUTA/biz/utils"
 )
@@ -21,23 +22,23 @@ func RegisterDemoRouter(r *gin.Engine) {
 func (ins *DemoController) Ping(c *gin.Context) {
 	pong, err := service.GetDemoService().Ping(c)
 	if err != nil {
-		utils.Response(c, 400, "server error", nil)
+		utils.ResponseServerError(c, common.UNKNOWNERROR)
 		return
 	}
-	utils.Response(c, 200, "OK", pong)
+	utils.ResponseSuccess(c, pong)
 }
 
 func (ins *DemoController) Hello(c *gin.Context) {
 	req := &bo.HelloRequest{}
 	err := c.ShouldBind(req)
 	if err != nil {
-		utils.Response(c, 400, "server error", nil)
+		utils.ResponseClientError(c, common.USERINPUTERROR)
 		return
 	}
 	hello, err := service.GetDemoService().Hello(c, req)
 	if err != nil {
-		utils.Response(c, 400, "server error", nil)
+		utils.ResponseServerError(c, common.UNKNOWNERROR)
 		return
 	}
-	utils.Response(c, 200, "OK", hello)
+	utils.ResponseSuccess(c, hello)
 }
