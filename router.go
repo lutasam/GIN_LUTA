@@ -21,5 +21,6 @@ func InitRouterAndMiddleware(r *gin.Engine) {
 
 	// 注册分组路由
 	// /demo
-	handler.RegisterDemoRouter(r)
+	demo := r.Group("/demo")
+	handler.RegisterDemoRouter(demo)
 }
